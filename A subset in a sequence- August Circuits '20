@@ -1,0 +1,27 @@
+//Partially solved: scored 75 only.
+
+
+t=int(input())
+l2=[1]
+l3=[1]
+pow2=1
+pow3=1
+for i in range(50):
+	l2.append(pow2*2)
+	pow2*=2
+	l3.append(pow3*3)
+	pow3*=3
+while(t):
+	t-=1
+	n=int(input())
+	l1=[]
+	while(n>0):
+		i=0
+		while(l2[i+1]<=n):
+			i+=1
+		l1.append(l3[i])
+		n-=l2[i]
+		
+	l1.reverse()
+	print(len(l1))
+	print(" ".join(str(e) for e in l1))
