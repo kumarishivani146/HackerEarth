@@ -1,0 +1,48 @@
+[A smallest number](https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/practice-problems/algorithm/smallest-number-4-7ee4ca9a/)
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	int t,n;
+	cin>>t;
+	while(t--){
+		int n;
+		cin>>n;
+		vector<int> v(n+1,1);
+		int mul=9,add=9,sum=n;
+		for(int i=1;i<=n;i++){
+			if((sum+add-i)<=mul)
+			break;
+			else{
+				mul*=9;
+				add+=9;
+			}
+		}
+		int flag=0,ind=n-add/9+1;
+		//cout<<add/9<<endl;
+		sum-=add/9;
+		int val=1;
+		for(int i=add/9;i>0;i--){
+			//cout<<"bush"<<endl;
+			for(int j=1;j<10;j++){
+				//cout<<val<<" hchs "<<mul/10<<endl;
+			// cout<<sum+j+(i-1)*9<<" "<<j*val*max(mul/(10),1)<<endl;
+				if(sum+j+(i-1)*9<=j*val*max(mul/(9),1)){
+					sum+=j;
+					val*=j;
+					mul/=9;
+					v[ind++]=j;
+					break;
+				}
+			}
+		}
+		for(int i=1;i<=n;i++)
+		cout<<v[i];
+		cout<<endl;
+	}		// Writing output to STDOUT
+}
+
+
+/* All test case pased*/
