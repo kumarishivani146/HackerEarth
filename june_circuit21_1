@@ -1,5 +1,7 @@
 [A smallest number](https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/practice-problems/algorithm/smallest-number-4-7ee4ca9a/)
 
+[I'm an inline-style link](https://www.google.com)
+
 #include <iostream>
 #include<bits/stdc++.h>
 using namespace std;
